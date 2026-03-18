@@ -1,36 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User Management System
 
-## Getting Started
+A **full-stack CRUD web application** built using **Next.js, Node.js API Routes, Prisma ORM, and MySQL/PostgreSQL**.
+The application allows users to **create, view, update, and delete users** through a clean and responsive interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+* View all users in a dashboard table
+* Create a new user
+* Edit existing user information
+* Delete users
+* Responsive UI with Tailwind CSS
+* RESTful API built using Next.js API routes
+* Database integration using Prisma ORM
+* Loading states and basic validation
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+
+**Backend**
+
+* Next.js API Routes (Node.js)
+
+**Database**
+
+* Prisma ORM
+* MySQL / PostgreSQL
+
+---
+
+## 📁 Project Structure
+
+```
+user-management/
+│
+├── prisma/
+│   └── schema.prisma
+│
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── add-user/
+│   │   │   └── page.tsx
+│   │   ├── edit-user/
+│   │   │   └── [id]/page.tsx
+│   │   └── api/
+│   │       └── users/
+│   │           ├── route.ts
+│   │           └── [id]/route.ts
+│   │
+│   ├── lib/
+│   │   └── prisma.ts
+│   │
+│   └── components/
+│
+├── .env
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Clone the repository:
 
-## Learn More
+```
+git clone https://github.com/kajal20202/npx-prisma-generate.git
+```
 
-To learn more about Next.js, take a look at the following resources:
+Navigate into the project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+cd npx-prisma-generate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Install dependencies:
 
-## Deploy on Vercel
+```
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Environment Setup
+
+Create a `.env` file in the project root and add your database connection.
+
+Example:
+
+```
+DATABASE_URL="mysql://root:password@localhost:3306/userdb"
+```
+
+or
+
+```
+DATABASE_URL="postgresql://postgres:password@localhost:5432/userdb"
+```
+
+---
+
+## 🗄 Prisma Setup
+
+Run migration to create the database schema:
+
+```
+npx prisma migrate dev --name init
+```
+
+Generate Prisma Client:
+
+```
+npx prisma generate
+```
+
+---
+
+## ▶️ Run the Application
+
+Start the development server:
+
+```
+npm run dev
+```
+
+Open your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint         | Description       |
+| ------ | ---------------- | ----------------- |
+| GET    | `/api/users`     | Get all users     |
+| POST   | `/api/users`     | Create a new user |
+| PUT    | `/api/users/:id` | Update user       |
+| DELETE | `/api/users/:id` | Delete user       |
+
+---
+
+## ⏱ Estimated Time Spent
+
+Approximately **5–6 hours** were spent completing this assignment including UI, API development, and database integration.
+
+---
+
+## ⚠️ Challenges Faced
+
+* Initial setup and configuration of **Prisma with Next.js**
+* Handling **Prisma client generation errors**
+* Managing **API integration with the frontend**
+
+These issues were resolved by properly generating the Prisma client and configuring the database connection.
+
+---
+
+## 📌 Future Improvements
+
+* Implement search functionality
+* Add pagination for user list
+* Improve UI with better form validation
+* Add toast notifications for actions
+
+---
+
+## 👩‍💻 Author
+
+**Kajal Talwekar**
+
+Frontend Developer
+React.js | Next.js | TypeScript | Prisma
